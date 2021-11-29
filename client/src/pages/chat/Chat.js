@@ -14,6 +14,7 @@ import { io } from "socket.io-client";
 
 import "./chat.css";
 import AddConvo from "../../components/addConvo/AddConvo";
+import { useHistory } from "react-router-dom";
 
 const Chat = () => {
   const [conversations, setConversations] = useState([]);
@@ -26,8 +27,10 @@ const Chat = () => {
   const { user } = useSelector((state) => state.auth);
   const scrollRef = useRef();
 
+  const history = useHistory();
+
   useEffect(() => {
-    socket.current = io("http://localhost:5000");
+    socket.current = io("/");
     socket.current.on("getMessage", (data) => {
       setArrivalMessage({
         sender: data.senderId,
@@ -115,6 +118,10 @@ const Chat = () => {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+  const goBack = () => {
+    history.push("/home");
+  };
+
   return (
     <>
       <Navbar />
@@ -122,7 +129,12 @@ const Chat = () => {
         <div className="chatMenu">
           <div className="chatMenuWrapper">
             <div className="chatMenuHeader">
-              <h3>Conversations</h3>
+              <div className="flex">
+                <div className="chatMenuBackBtn" onClick={goBack}>
+                  <i className="fas fa-arrow-left"></i>
+                </div>
+                <h3 style={{ marginLeft: "5px" }}>Conversations</h3>
+              </div>
               <AddConvo
                 conversations={conversations}
                 getConversations={getConversations}

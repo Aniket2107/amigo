@@ -12,7 +12,6 @@ import {
   getCurrentUserTweets,
 } from "../../redux/actions/currentUserAction";
 import { getFollowData } from "../../redux/actions/authActions";
-import { ToastContainer } from "react-toastify";
 
 const User = () => {
   const { id } = useParams();
@@ -126,8 +125,6 @@ const User = () => {
             })}
         </div>
       )}
-
-      <ToastContainer />
     </div>
   ) : (
     <div className="profile">

@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema(
     avatar: {
       type: String,
       default:
-        "https://res.cloudinary.com/aniketcodes/image/upload/v1637340643/krkqlhnddxpy7fys7pzp.png",
+        "https://res.cloudinary.com/aniketcodes/image/upload/v1638169758/test_v5vurw.png",
     },
     followers: {
       type: Array,

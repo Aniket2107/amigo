@@ -35,3 +35,13 @@
   border-radius: 50%;
   border: 1px solid grey;
 }
+
+@media (max-width: 480px) {
+  .addConvo_head {
+    margin-left: 5px;
+  }
+
+  .addConvo_head i {
+    padding: 5px;
+  }
+}

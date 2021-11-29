@@ -31,3 +31,15 @@
     display: none;
   }
 }
+
+@media (max-width: 480px) {
+  .conversation {
+    font-size: 8px;
+    padding: 5px;
+  }
+
+  .conversationImg {
+    max-width: 20px;
+    max-height: 20px;
+  }
+}

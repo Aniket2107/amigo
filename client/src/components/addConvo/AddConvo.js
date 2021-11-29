@@ -6,7 +6,7 @@ import { customStyles } from "./modalStyles";
 import "./addConvo.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getFollowData } from "../../redux/actions/authActions";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import axios from "axios";
 import { API } from "../../helpers/API";
 
@@ -85,7 +85,7 @@ const AddConvo = ({ conversations, getConversations }) => {
         {filteredUsers.length > 0 &&
           filteredUsers.map((user) => {
             return (
-              <div className="add_user_conversation">
+              <div className="add_user_conversation" key={user._id}>
                 <div className="flex">
                   <img
                     src={user.avatar}
@@ -108,7 +108,6 @@ const AddConvo = ({ conversations, getConversations }) => {
           <p style={{ color: "red" }}>Sorry no user found</p>
         )}
       </Modal>
-      <ToastContainer />
     </div>
   );
 };

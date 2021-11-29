@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
 
 import { register } from "../../redux/actions/authActions";
@@ -17,7 +16,7 @@ function Register() {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const { loading, error, user } = useSelector((state) => state.auth);
+  const { loading, user } = useSelector((state) => state.auth);
 
   useEffect(() => {
     if (user) {
@@ -36,10 +35,6 @@ function Register() {
       [e.target.name]: e.target.value,
     });
   };
-
-  if (error) {
-    toast.error(error || "Something went wrong, Try again");
-  }
 
   return (
     <div className="login">
@@ -116,7 +111,6 @@ function Register() {
           </Link>
         </form>
       </div>
-      <ToastContainer />
     </div>
   );
 }

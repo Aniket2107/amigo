@@ -37,6 +37,8 @@ function AddTweet() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    console.log(image);
+
     if (tweet.length < 1) {
       toast.error("Tweet cannot be empty");
       return;
@@ -46,7 +48,7 @@ function AddTweet() {
       addTweet({
         user: user._id,
         content: tweet,
-        image: image ? image : "",
+        img: image ? image : "",
       })
     );
 

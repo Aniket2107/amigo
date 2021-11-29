@@ -25,8 +25,6 @@ const Tweet = ({ tweet, userLiked }) => {
 
   const isLiked = tweet.likes.includes(user._id);
 
-  console.log(userLiked);
-
   const handleCreateLike = async () => {
     if (userLiked) {
       dispatch(

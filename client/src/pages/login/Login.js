@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
 
 import { login } from "../../redux/actions/authActions";
@@ -114,7 +113,6 @@ function Login() {
           </Link>
         </form>
       </div>
-      <ToastContainer />
     </div>
   );
 }

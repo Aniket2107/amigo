@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { ToastContainer } from "react-toastify";
 
 import "./login/login.css";
 
@@ -50,8 +49,6 @@ const Landing = ({ history }) => {
           <button className="landing_login">Login</button>
         </Link>
       </div>
-
-      <ToastContainer />
     </div>
   );
 };

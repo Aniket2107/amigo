@@ -3,15 +3,16 @@ import UpdateProfile from "../../components/profile/UpdateProfile";
 import TrendTweet from "../../components/trendtweet/TrendTweet";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { ToastContainer } from "react-toastify";
 
 import { getMyTweets } from "../../redux/actions/myTweetsActions";
 import { getUserLikedData } from "../../redux/actions/userLikedAction";
 
 import "./profile.css";
+import { useHistory } from "react-router-dom";
 
 function Profile() {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
     dispatch(getUserLikedData());
@@ -62,17 +63,20 @@ function Profile() {
       </div>
 
       <div className="profile_stats">
-        <div className="followers">
+        <div className="followers" onClick={() => history.push(`/followers`)}>
           <span className="1">{user.followers?.length || 0}</span>
           <span> Followers</span>
         </div>
 
-        <div className="profile_following">
+        <div
+          className="profile_following"
+          onClick={() => history.push("/following")}
+        >
           <span className="1">{user.followings?.length || 0}</span>
           <span className="1"> Following</span>
         </div>
 
-        <div className="tweets">
+        <div className="tweets" onClick={() => history.push("/liked-tweets")}>
           <span className="1">{userLiked?.length || 0}</span>
           <span> Liked Tweets</span>
         </div>
@@ -100,8 +104,6 @@ function Profile() {
           )}
         </div>
       )}
-
-      <ToastContainer />
     </div>
   ) : (
     <div className="alignHomeLoader">

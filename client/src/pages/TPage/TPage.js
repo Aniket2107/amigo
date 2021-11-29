@@ -1,8 +1,8 @@
 import { formatDistance, subDays } from "date-fns";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import { useHistory, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import "../../components/tweet/tweet.css";
 import "./tpage.css";
@@ -22,6 +22,7 @@ const TPage = () => {
   const { id } = useParams();
 
   const dispatch = useDispatch();
+  const history = useHistory();
 
   function preload() {
     dispatch(getCurrentTweet(id)).then((res) => {
@@ -62,6 +63,10 @@ const TPage = () => {
     );
 
     setCommentContent("");
+  };
+
+  const handleRedirectUser = (id) => {
+    history.push(`/user/${id}`);
   };
 
   return !loading && !isLoading ? (
@@ -140,7 +145,11 @@ const TPage = () => {
 
             {currentTweet.comments.map((cmt) => {
               return (
-                <div className="tweeet_comment" key={cmt._id}>
+                <div
+                  className="tweeet_comment"
+                  key={cmt._id}
+                  onClick={() => handleRedirectUser(cmt.user._id)}
+                >
                   <img
                     src={cmt.user.avatar}
                     alt="avatar"
@@ -165,7 +174,6 @@ const TPage = () => {
           </div>
         </div>
       </div>
-      <ToastContainer />
     </div>
   ) : (
     <div className="tweeet">

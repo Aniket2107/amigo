@@ -10,9 +10,10 @@ import PrivateRoute from "./helpers/PrivateRoute";
 
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import "react-toastify/dist/ReactToastify.css";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import Search from "./pages/search/Search";
 import Following from "./pages/following/Following";
+import Followers from "./pages/following/Followers";
 import Chat from "./pages/chat/Chat";
 import TPage from "./pages/TPage/TPage";
 
@@ -38,10 +39,12 @@ function App() {
         <PrivateRoute path="/profile" exact component={Profile} />
         <PrivateRoute path="/liked-tweets" exact component={LikedTweet} />
         <PrivateRoute path="/following" exact component={Following} />
+        <PrivateRoute path="/followers" exact component={Followers} />
         <PrivateRoute path="/search" exact component={Search} />
         <PrivateRoute path="/user/:id" exact component={User} />
         <PrivateRoute path="/tweet/:id" exact component={TPage} />
         <Redirect to="/home" />
+        <ToastContainer />
       </Switch>
     </BrowserRouter>
   );

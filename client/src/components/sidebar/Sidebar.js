@@ -46,6 +46,17 @@ const Sidebar = () => {
         <i className="fas fa-user-friends fa-fw" aria-hidden="true" />
         <span className="title">Following</span>
       </Link>
+
+      <Link
+        to="/followers"
+        className={`sidebar__items ${
+          window.location.pathname === "/followers" ? "sidebar__active" : ""
+        }`}
+      >
+        <i className="fa fa-users fa-fw" aria-hidden="true" />
+        <span className="title">Followers</span>
+      </Link>
+
       <Link
         to="/liked-tweets"
         className={`sidebar__items ${
