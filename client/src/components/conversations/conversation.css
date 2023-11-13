@@ -1,0 +1,45 @@
+.conversation {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.cv_1 {
+  background-color: #fff;
+}
+
+.conversation:hover {
+  background-color: #fff;
+}
+
+.conversationImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.conversationName {
+  font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .conversationName {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .conversation {
+    font-size: 8px;
+    padding: 5px;
+  }
+
+  .conversationImg {
+    max-width: 20px;
+    max-height: 20px;
+  }
+}

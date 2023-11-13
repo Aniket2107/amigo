@@ -1,0 +1,170 @@
+.messenger {
+  margin-top: 40px;
+  height: calc(100vh - 70px);
+  display: flex;
+  position: relative;
+}
+
+.chatMenuHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatMenuBackBtn {
+  background-color: #047aed;
+  color: #fff;
+}
+
+.chatMenuBackBtn i {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.chatMenu {
+  flex: 3.5;
+}
+
+.chatMenuInput {
+  width: 90%;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+.chatBox {
+  flex: 5.5;
+}
+
+.chatBoxWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.chatBoxTop {
+  height: 100%;
+  overflow-y: scroll;
+  padding-right: 10px;
+  background-color: #fff;
+}
+
+.chatBoxBottom form {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chatMessageInput {
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.chatSubmitButton {
+  width: 70px;
+  height: 40px;
+  margin-left: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #047aed;
+  color: white;
+}
+
+.chatOnline {
+  flex: 3;
+}
+
+.chatMenuWrapper,
+.chatBoxWrapper,
+.chatOnlineWrapper {
+  padding: 10px;
+  height: 100%;
+}
+
+.noConversationText {
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  font-size: 15px;
+  color: #333;
+  cursor: default;
+}
+
+.hamburger {
+  display: none;
+}
+
+.hamburger i {
+  padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .chatMenu {
+    flex: 1;
+  }
+
+  .chatMenuInput {
+    display: none;
+  }
+
+  .chatBox {
+    flex: 10;
+  }
+
+  .chatOnline {
+    flex: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .messenger {
+    max-width: 100vw;
+    height: auto;
+  }
+
+  .chatMenu {
+    max-width: 50px;
+  }
+
+  .chatOnline {
+    display: none;
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 10px;
+    margin-left: 0px;
+    display: block;
+  }
+
+  .hamburger i {
+    color: #000;
+  }
+
+  .chatBox {
+    margin-bottom: 80px;
+  }
+
+  .chatMenuHeader {
+    margin-top: 15px;
+    font-size: 8px;
+  }
+
+  .chatMenuHeader i {
+    padding: 5px;
+  }
+
+  .chatMenuHeader h3 {
+    display: none;
+  }
+
+  .noConversationText {
+    margin-top: 15px;
+  }
+}

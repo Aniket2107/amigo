@@ -1,0 +1,47 @@
+.addConvo_head,
+.customModal_btn {
+  background-color: #047aed;
+  color: #fff;
+}
+
+.customModal_btn i {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.addConvo_head i {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.customModal_input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid grey;
+  padding: 5px;
+  margin: 15px;
+  width: 90%;
+}
+
+.add_user_conversation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add_user_conversation .customModal_avatar {
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 50%;
+  border: 1px solid grey;
+}
+
+@media (max-width: 480px) {
+  .addConvo_head {
+    margin-left: 5px;
+  }
+
+  .addConvo_head i {
+    padding: 5px;
+  }
+}

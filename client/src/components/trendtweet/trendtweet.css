@@ -1,0 +1,55 @@
+.trendtweet {
+  background-color: #fff;
+  border: 1px solid #e1e8ed;
+  margin: 10px;
+  max-height: 100px;
+  padding: 5px;
+
+  border-radius: 10px;
+  position: relative;
+}
+
+.trendtweet_container {
+  display: flex;
+  flex: 1 auto 1;
+  max-height: 80px;
+  overflow: hidden;
+}
+
+.trendtweet_avatar {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border: 1px solid grey;
+  margin: 5px;
+}
+
+.trendtweet_caption {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.trendtweet_stats {
+  display: flex;
+  margin-left: 70px;
+  margin-top: 5px;
+}
+
+.trendtweet_update {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  margin: 10px;
+}
+
+.trendtweet_update i {
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.trend__tweet__editBtn {
+  padding: 10px;
+  margin-left: 15px;
+}
