@@ -51,7 +51,7 @@ const UpdateProfile = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(updateUserData(values, user._id));
+    dispatch(updateUserData({ ...values, avatar: image }, user._id));
     setIsOpen(false);
   };
 
@@ -86,7 +86,7 @@ const UpdateProfile = () => {
                     src={image}
                     style={{ width: "150px", borderRadius: "50%" }}
                     alt="avatar"
-                    onClick={() => inputFile.current?.click()}
+                    // onClick={() => inputFile.current?.click()}
                   />
                 </span>
               ) : (
@@ -94,7 +94,7 @@ const UpdateProfile = () => {
                   <i
                     className="fa fa-user fa-5x"
                     aria-hidden="true"
-                    onClick={() => inputFile.current?.click()}
+                    // onClick={() => inputFile.current?.click()}
                   ></i>
                 </span>
               )}

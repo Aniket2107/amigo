@@ -90,7 +90,7 @@ function AddTweet() {
             id="file-input"
             placeholder="Upload an image"
             onChange={uploadImage}
-            ref={inputFile}
+            // ref={inputFile}
             style={{ display: "none" }}
           />
 

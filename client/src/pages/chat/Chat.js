@@ -30,7 +30,7 @@ const Chat = () => {
   const history = useHistory();
 
   useEffect(() => {
-    socket.current = io("/");
+    socket.current = io(process.env.REACT_APP_SOCKET_URL);
     socket.current.on("getMessage", (data) => {
       setArrivalMessage({
         sender: data.senderId,
